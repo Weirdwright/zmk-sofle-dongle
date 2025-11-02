@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: eyelash_sofle}
 layers:
-  0 0 0 0 0 0 0 0 0 0:
+  0  0  0  0  0:
   - $$mdi:keyboard-esc$$
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
@@ -56,16 +56,16 @@ layers:
   - $$mdi:volume-off$$
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-command$$
-  - 1 1 1 1 1 1 1 1 1 1
+  - 1  1  1  1  1
   - $$mdi:keyboard-space$$
   - $$mdi:apple-keyboard-option$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:keyboard-space$$
-  - 2 2 2 2 2 2 2 2 2 2
+  - 2  2  2  2  2
   - $$mdi:apple-keyboard-shift$$
   - RETURN
-  1 1 1 1 1 1 1 1 1 1:
+  1  1  1  1  1:
   - F1
   - F2
   - F3
@@ -78,7 +78,7 @@ layers:
   - '*'
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - _
   - {t: '`', s: '~'}
   - {t: '`', s: '~'}
   - $$mdi:mouse-left-click-outline$$
@@ -86,23 +86,23 @@ layers:
   - $$mdi:mouse-right-click-outline$$
   - '&mkp MB4'
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
+  - {t: '-', s: _}
   - {t: '7', s: '&'}
   - {t: '8', s: '*'}
   - {t: '9', s: (}
   - {t: '-', s: _}
-  - {t: '-', s: _}
   - {t: '=', s: +}
   - {t: '$$mdi:transfer$$', type: trans}
   - '~'
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '-', s: _}
+  - {t: '-', s: _}
+  - {t: '=', s: +}
   - '&mkp MB5'
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
+  - +
   - '4'
   - {t: '5', s: '%'}
   - '6'
-  - +
   - <
   - '>'
   - $$mdi:apple-keyboard-shift$$
@@ -112,10 +112,10 @@ layers:
   - RGB EFR
   - RGB SPI
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
+  - {t: '=', s: +}
   - '1'
   - '2'
   - '3'
-  - {t: '=', s: +}
   - F12
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:volume-off$$
@@ -130,7 +130,7 @@ layers:
   - {t: '0', s: )}
   - {t: ., s: '>'}
   - RETURN
-  2 2 2 2 2 2 2 2 2 2:
+  2  2  2  2  2:
   - F1
   - F2
   - F3
@@ -159,9 +159,9 @@ layers:
   - )
   - {t: '$$mdi:transfer$$', type: trans}
   - '~'
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - Sft+Ctl+$$mdi:keyboard-tab$$
+  - Gui+$$mdi:arrow-up-bold$$
+  - Ctl+$$mdi:keyboard-tab$$
   - '&mkp MB5'
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - PG DN
@@ -170,11 +170,11 @@ layers:
   - $$mdi:arrow-right-bold$$
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:apple-keyboard-shift$$
   - RGB OFF
-  - RGB ON
-  - RGB EFF
-  - RGB EFR
+  - Gui+$$mdi:arrow-left-bold$$
+  - Gui+$$mdi:arrow-down-bold$$
+  - Gui+$$mdi:arrow-right-bold$$
   - RGB SPI
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
   - RGB BRI
@@ -193,8 +193,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - Sft+Ctl+$$mdi:keyboard-tab$$
+  - Ctl+$$mdi:keyboard-tab$$
   layer3:
   - F1
   - F2
