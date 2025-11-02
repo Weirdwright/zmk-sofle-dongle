@@ -60,30 +60,30 @@
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
-            display-name = "0 0 0 0 0 0 0 0 0 0";
+            display-name = "0  0  0  0  0";
         };
 
         layer1 {
             bindings = <
-&kp F1          &kp F2            &kp F3          &kp F4           &kp F5           &kp F6             &mmv MOVE_UP     &kp KP_NUMLOCK  &kp SLASH         &kp ASTERISK  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
-&kp GRAVE       &kp GRAVE         &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB4           &mmv MOVE_DOWN   &kp N7          &kp N8            &kp N9        &kp MINUS         &kp MINUS          &kp EQUAL
-&trans          &kp TILDE         &trans          &trans           &trans           &mkp MB5           &mmv MOVE_LEFT   &kp NUMBER_4    &kp N5            &kp NUMBER_6  &kp PLUS          &kp LESS_THAN      &kp GREATER_THAN
-&kp LEFT_SHIFT  &rgb_ug RGB_OFF   &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &kp NUMBER_1    &kp NUMBER_2      &kp NUMBER_3  &kp EQUAL         &kp F12            &kp RIGHT_SHIFT
+&kp F1          &kp F2            &kp F3          &kp F4           &kp F5           &kp F6             &mmv MOVE_UP     &kp KP_NUMLOCK  &kp SLASH         &kp ASTERISK  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp UNDER
+&kp GRAVE       &kp GRAVE         &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB4           &mmv MOVE_DOWN   &kp MINUS       &kp N7            &kp N8        &kp N9            &kp MINUS          &kp EQUAL
+&trans          &kp TILDE         &kp MINUS       &kp MINUS        &kp EQUAL        &mkp MB5           &mmv MOVE_LEFT   &kp PLUS        &kp NUMBER_4      &kp N5        &kp NUMBER_6      &kp LESS_THAN      &kp GREATER_THAN
+&kp LEFT_SHIFT  &rgb_ug RGB_OFF   &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &kp EQUAL       &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3      &kp F12            &kp RIGHT_SHIFT
 &kp C_MUTE      &kp LEFT_CONTROL  &trans          &trans           &trans           &trans             &mkp LCLK        &kp LESS_THAN   &kp GREATER_THAN  &kp N0        &kp DOT           &kp RETURN
             >;
 
-            display-name = "1 1 1 1 1 1 1 1 1 1";
+            display-name = "1  1  1  1  1";
             sensor-bindings = <&scroll_encoder>;
         };
 
         layer2 {
-            display-name = "2 2 2 2 2 2 2 2 2 2";
+            display-name = "2  2  2  2  2";
             bindings = <
-&kp F1      &kp F2           &kp F3          &kp F4            &kp F5           &kp F6             &mmv MOVE_UP     &kp F7           &kp F8           &kp F9      &kp F10    &kp F11               &kp F12
-&trans      &kp GRAVE        &mkp LCLK       &mkp MCLK         &mkp RCLK        &mkp MB4           &mmv MOVE_DOWN   &kp PG_UP        &kp END          &kp UP      &kp HOME   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&trans      &kp TILDE        &trans          &trans            &trans           &mkp MB5           &mmv MOVE_LEFT   &kp PG_DN        &kp LEFT         &kp DOWN    &kp RIGHT  &kp LEFT_BRACKET      &kp RIGHT_BRACKET
-&trans      &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF   &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp INSERT  &kp F11    &kp LEFT_BRACE        &kp RIGHT_BRACE
-&kp C_MUTE  &kp ESCAPE       &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT     &kp DEL            &mkp LCLK        &trans           &trans           &trans      &trans     &trans
+&kp F1          &kp F2           &kp F3           &kp F4            &kp F5         &kp F6             &mmv MOVE_UP     &kp F7           &kp F8           &kp F9      &kp F10          &kp F11               &kp F12
+&trans          &kp GRAVE        &mkp LCLK        &mkp MCLK         &mkp RCLK      &mkp MB4           &mmv MOVE_DOWN   &kp PG_UP        &kp END          &kp UP      &kp HOME         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&trans          &kp TILDE        &kp LS(LC(TAB))  &kp LG(UP_ARROW)  &kp LC(TAB)    &mkp MB5           &mmv MOVE_LEFT   &kp PG_DN        &kp LEFT         &kp DOWN    &kp RIGHT        &kp LEFT_BRACKET      &kp RIGHT_BRACKET
+&kp LEFT_SHIFT  &rgb_ug RGB_OFF  &kp LG(LEFT)     &kp LG(DOWN)      &kp LG(RIGHT)  &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp INSERT  &kp F11          &kp LEFT_BRACE        &kp RIGHT_BRACE
+&kp C_MUTE      &kp ESCAPE       &kp LEFT_SHIFT   &kp LEFT_CONTROL  &kp LEFT_ALT   &kp DEL            &mkp LCLK        &trans           &trans           &trans      &kp LS(LC(TAB))  &kp LC(TAB)
             >;
 
             sensor-bindings = <&scroll_encoder>;
