@@ -47,6 +47,15 @@
     behaviors {
     };
 
+    macros {
+        unicodeArrow: unicodeArrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <>;
+            label = "UNICODEARROW";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -54,29 +63,41 @@
             bindings = <
 &kp ESC     &kp N1     &kp N2        &kp N3      &kp N4  &kp N5          &kp UP_ARROW     &kp N6   &kp N7  &kp N8     &kp N9           &kp N0      &kp BACKSPACE
 &kp TAB     &kp Q      &kp W         &kp E       &kp R   &kp T           &kp DOWN_ARROW   &kp Y    &kp U   &kp I      &kp O            &kp P       &kp BSLH
-&kp CAPS    &kp A      &kp S         &kp D       &kp F   &kp G           &kp LEFT_ARROW   &kp H    &kp J   &kp K      &kp L            &kp SEMI    &kp APOS
+&kp CAPS    &kp A      &kp S         &kp D       &kp F   &kp G           &kp LEFT_ARROW   &kp H    &kp J   &kp K      &kp L            &kp SEMI    &kp RET
 &kp LSHFT   &kp Z      &kp X         &kp C       &kp V   &kp B           &kp RIGHT_ARROW  &kp N    &kp M   &kp COMMA  &kp DOT          &kp FSLH    &kp RIGHT_SHIFT
-&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp RETURN  &mo 1   &kp LEFT_ALT    &kp ENTER        &kp RET  &mo 2   &kp SPACE  &kp RIGHT_SHIFT  &kp RETURN
+&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp RETURN  &mo 2   &kp LEFT_ALT    &kp ENTER        &kp RET  &mo 1   &kp SPACE  &kp RIGHT_SHIFT  &kp RETURN
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
-            display-name = "0  0  0  0  0";
+            display-name = "LAYER 0";
         };
 
         layer1 {
             bindings = <
-&kp F1          &kp F2            &kp F3          &kp F4           &kp F5           &kp F6             &mmv MOVE_UP     &kp KP_NUMLOCK  &kp SLASH         &kp ASTERISK  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp UNDER
-&kp GRAVE       &kp GRAVE         &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB4           &mmv MOVE_DOWN   &kp MINUS       &kp N7            &kp N8        &kp N9            &kp MINUS          &kp EQUAL
-&trans          &kp TILDE         &kp MINUS       &kp MINUS        &kp EQUAL        &mkp MB5           &mmv MOVE_LEFT   &kp PLUS        &kp NUMBER_4      &kp N5        &kp NUMBER_6      &kp LESS_THAN      &kp GREATER_THAN
-&kp LEFT_SHIFT  &rgb_ug RGB_OFF   &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &kp EQUAL       &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3      &kp F12            &kp RIGHT_SHIFT
-&kp C_MUTE      &kp LEFT_CONTROL  &trans          &trans           &trans           &trans             &mkp LCLK        &kp LESS_THAN   &kp GREATER_THAN  &kp N0        &kp DOT           &kp RETURN
+&kp ESCAPE      &kp F1            &kp F2         &kp F3            &kp F4             &kp F5           &trans  &kp F6     &kp F7                &kp F8                 &kp F9         &kp F10            &kp F11
+&kp TAB         &kp GRAVE         &kp LESS_THAN  &kp GREATER_THAN  &kp MINUS          &kp PIPE         &trans  &kp CARET  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOLLAR     &unicodeArrow      &trans
+&trans          &kp EXCL          &kp ASTERISK   &kp SLASH         &kp EQUAL          &kp AMPERSAND    &trans  &kp HASH   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON  &kp DOUBLE_QUOTES  &trans
+&kp LEFT_SHIFT  &kp TILDE         &kp PLUS       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT      &trans  &kp AT     &kp COLON             &kp COMMA              &kp PERIOD     &kp SQT            &kp RIGHT_SHIFT
+&trans          &kp LEFT_CONTROL  &kp LEFT_GUI   &kp RET           &trans             &kp LEFT_ALT     &trans  &trans     &trans                &kp F12                &trans         &trans
             >;
 
-            display-name = "1  1  1  1  1";
-            sensor-bindings = <&scroll_encoder>;
+            label = "LAYER 1";
         };
 
         layer2 {
+            bindings = <
+&kp ESCAPE      &trans            &mkp LCLK        &mkp MCLK     &mkp RCLK    &kp F6          &mmv MOVE_UP     &kp ESCAPE       &kp KP_NUMLOCK  &kp SLASH     &kp ASTERISK  &kp MINUS   &kp RIGHT_CONTROL
+&kp TAB         &trans            &kp LS(LC(TAB))  &kp UP_ARROW  &kp LC(TAB)  &mkp MB4        &mmv MOVE_DOWN   &kp MINUS        &kp N7          &kp N8        &kp N9        &kp PLUS    &kp RIGHT_ALT
+&trans          &trans            &kp LEFT_ARROW   &kp DOWN      &kp RIGHT    &mkp MB5        &mmv MOVE_LEFT   &kp PLUS         &kp NUMBER_4    &kp N5        &kp NUMBER_6  &kp PLUS    &kp DELETE
+&kp LEFT_SHIFT  &trans            &trans           &trans        &trans       &trans          &mmv MOVE_RIGHT  &kp EQUAL        &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp RETURN  &kp RIGHT_SHIFT
+&kp C_MUTE      &kp LEFT_CONTROL  &kp LEFT_GUI     &kp RET       &trans       &kp LEFT_ALT    &mkp LCLK        &kp RIGHT_SHIFT  &kp RIGHT_GUI   &kp N0        &kp DOT       &kp RETURN
+            >;
+
+            display-name = "LAYER 2";
+            sensor-bindings = <&scroll_encoder>;
+        };
+
+        ASDF {
             display-name = "2  2  2  2  2";
             bindings = <
 &kp F1          &kp F2           &kp F3           &kp F4            &kp F5         &kp F6             &mmv MOVE_UP     &kp F7           &kp F8           &kp F9      &kp F10          &kp F11               &kp F12
