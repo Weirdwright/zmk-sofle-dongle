@@ -47,15 +47,6 @@
     behaviors {
     };
 
-    macros {
-        unicodeArrow: unicodeArrow {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <>;
-            label = "UNICODEARROW";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -75,7 +66,7 @@
         layer1 {
             bindings = <
 &kp ESCAPE      &kp F1            &kp F2         &kp F3            &kp F4             &kp F5           &trans  &kp F6     &kp F7                &kp F8                 &kp F9         &kp F10            &kp F11
-&kp TAB         &kp GRAVE         &kp LESS_THAN  &kp GREATER_THAN  &kp MINUS          &kp PIPE         &trans  &kp CARET  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOLLAR     &unicodeArrow      &trans
+&kp TAB         &kp GRAVE         &kp LESS_THAN  &kp GREATER_THAN  &kp MINUS          &kp PIPE         &trans  &kp CARET  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOLLAR     &trans             &trans
 &trans          &kp EXCL          &kp ASTERISK   &kp SLASH         &kp EQUAL          &kp AMPERSAND    &trans  &kp HASH   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON  &kp DOUBLE_QUOTES  &trans
 &kp LEFT_SHIFT  &kp TILDE         &kp PLUS       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT      &trans  &kp AT     &kp COLON             &kp COMMA              &kp PERIOD     &kp SQT            &kp RIGHT_SHIFT
 &trans          &kp LEFT_CONTROL  &kp LEFT_GUI   &kp RET           &trans             &kp LEFT_ALT     &trans  &trans     &trans                &kp F12                &trans         &trans
