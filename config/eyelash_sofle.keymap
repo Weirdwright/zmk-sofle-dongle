@@ -92,7 +92,7 @@
             display-name = "2  2  2  2  2";
             bindings = <
 &kp F1          &kp F2           &kp F3           &kp F4            &kp F5         &kp F6             &mmv MOVE_UP     &kp F7           &kp F8           &kp F9      &kp F10          &kp F11               &kp F12
-&trans          &kp GRAVE        &mkp LCLK        &mkp MCLK         &mkp RCLK      &mkp MB4           &mmv MOVE_DOWN   &kp PG_UP        &kp END          &kp UP      &kp HOME         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&kp A           &kp GRAVE        &mkp LCLK        &mkp MCLK         &mkp RCLK      &mkp MB4           &mmv MOVE_DOWN   &kp PG_UP        &kp END          &kp UP      &kp HOME         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
 &trans          &kp TILDE        &kp LS(LC(TAB))  &kp LG(UP_ARROW)  &kp LC(TAB)    &mkp MB5           &mmv MOVE_LEFT   &kp PG_DN        &kp LEFT         &kp DOWN    &kp RIGHT        &kp LEFT_BRACKET      &kp RIGHT_BRACKET
 &kp LEFT_SHIFT  &rgb_ug RGB_OFF  &kp LG(LEFT)     &kp LG(DOWN)      &kp LG(RIGHT)  &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp INSERT  &kp F11          &kp LEFT_BRACE        &kp RIGHT_BRACE
 &kp C_MUTE      &kp ESCAPE       &kp LEFT_SHIFT   &kp LEFT_CONTROL  &kp LEFT_ALT   &kp DEL            &mkp LCLK        &trans           &trans           &trans      &kp LS(LC(TAB))  &kp LC(TAB)
