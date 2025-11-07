@@ -47,6 +47,38 @@
     behaviors {
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        LShiftSpaceUnderscore {
+            bindings = <&kp UNDER>;
+            key-positions = <39 61>;
+            layers = <0>;
+        };
+
+        arrowLeftTrigger {
+            bindings = <&arrowLeft>;
+            key-positions = <39 24>;
+            layers = <1>;
+        };
+    };
+
+    macros {
+        arrowRight: arrowRight {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS &kp GT>;
+            label = "ARROWRIGHT";
+        };
+
+        arrowLeft: arrowLeft {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp LT &kp MINUS>;
+            label = "ARROWLEFT";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -54,9 +86,9 @@
             bindings = <
 &kp ESC     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5          &kp UP_ARROW     &kp NUMBER_6   &kp N7  &kp N8     &kp N9     &kp N0      &kp BACKSPACE
 &kp TAB     &kp Q         &kp W         &kp E         &kp R         &kp T           &kp DOWN_ARROW   &kp Y          &kp U   &kp I      &kp O      &kp P       &kp BSLH
-&kp CAPS    &kp A         &kp S         &kp D         &kp F         &kp G           &kp LEFT_ARROW   &kp H          &kp J   &kp K      &kp L      &kp SEMI    &kp RET
+&kp LCTRL   &kp A         &kp S         &kp D         &kp F         &kp G           &kp LEFT_ARROW   &kp H          &kp J   &kp K      &kp L      &kp SEMI    &kp RET
 &kp LSHFT   &kp Z         &kp X         &kp C         &kp V         &kp B           &kp RIGHT_ARROW  &kp N          &kp M   &kp COMMA  &kp DOT    &kp FSLH    &kp RIGHT_SHIFT
-&kp C_MUTE  &kp LCTRL     &kp LEFT_GUI  &kp RET       &mo 2         &kp LEFT_ALT    &kp ENTER        &kp BACKSPACE  &mo 1   &kp SPACE  &kp UNDER  &kp RETURN
+&kp C_MUTE  &kp CAPSLOCK  &kp LEFT_GUI  &kp RET       &mo 2         &kp LEFT_ALT    &kp ENTER        &kp BACKSPACE  &mo 1   &kp SPACE  &kp UNDER  &kp RETURN
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -65,11 +97,11 @@
 
         layer1 {
             bindings = <
-&kp ESCAPE      &kp F2            &kp F3         &kp F4            &kp F5             &kp F6           &trans  &kp F7     &kp F8                &kp F9                 &kp F10        &kp F11            &kp F12
-&kp TAB         &kp GRAVE         &kp LESS_THAN  &kp GREATER_THAN  &kp MINUS          &kp PIPE         &trans  &kp CARET  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOLLAR     &trans             &trans
-&trans          &kp EXCL          &kp ASTERISK   &kp SLASH         &kp EQUAL          &kp AMPERSAND    &trans  &kp HASH   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON  &kp DOUBLE_QUOTES  &trans
-&kp LEFT_SHIFT  &kp TILDE         &kp PLUS       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT      &trans  &kp AT     &kp COLON             &kp COMMA              &kp PERIOD     &kp SQT            &kp RIGHT_SHIFT
-&trans          &kp LEFT_CONTROL  &kp LEFT_GUI   &kp RET           &trans             &kp LEFT_ALT     &trans  &trans     &trans                &trans                 &trans         &trans
+&kp ESCAPE      &kp F1     &kp F2         &kp F3            &kp F4             &kp F5           &trans  &kp F6     &kp F7                &kp F8                 &kp F9         &kp F10            &kp F11
+&kp TAB         &kp GRAVE  &kp LESS_THAN  &kp GREATER_THAN  &kp MINUS          &kp PIPE         &trans  &kp CARET  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOLLAR     &arrowRight        &kp F12
+&kp LCTRL       &kp EXCL   &kp ASTERISK   &kp SLASH         &kp EQUAL          &kp AMPERSAND    &trans  &kp HASH   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON  &kp DOUBLE_QUOTES  &kp RET
+&kp LEFT_SHIFT  &kp TILDE  &kp PLUS       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT      &trans  &kp AT     &kp COLON             &kp COMMA              &kp PERIOD     &kp SQT            &kp RIGHT_SHIFT
+&trans          &kp CLCK   &kp LEFT_GUI   &kp RET           &kp F12            &kp LEFT_ALT     &trans  &trans     &trans                &trans                 &trans         &trans
             >;
 
             label = " ";
@@ -77,11 +109,11 @@
 
         layer2 {
             bindings = <
-&kp ESCAPE      &trans            &mkp LCLK        &mkp MCLK     &mkp RCLK    &kp F6           &mmv MOVE_UP     &kp ESCAPE     &kp KP_NUMLOCK  &trans        &trans        &trans        &kp RIGHT_CONTROL
-&kp TAB         &trans            &kp LS(LC(TAB))  &kp UP_ARROW  &kp LC(TAB)  &kp PAGE_UP      &mmv MOVE_DOWN   &kp MINUS      &kp N7          &kp N8        &kp N9        &kp ASTERISK  &kp RIGHT_ALT
-&trans          &trans            &kp LEFT_ARROW   &kp DOWN      &kp RIGHT    &kp PAGE_DOWN    &mmv MOVE_LEFT   &kp PLUS       &kp NUMBER_4    &kp N5        &kp NUMBER_6  &kp SLASH     &kp DELETE
-&kp LEFT_SHIFT  &trans            &trans           &trans        &kp END      &kp HOME         &mmv MOVE_RIGHT  &kp EQUAL      &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp RETURN    &kp RIGHT_SHIFT
-&kp C_MUTE      &kp LEFT_CONTROL  &kp LEFT_GUI     &kp RET       &trans       &kp LEFT_ALT     &mkp LCLK        &kp BACKSPACE  &kp LCTRL       &kp N0        &kp DOT       &kp RETURN
+&kp ESCAPE      &trans  &mkp LCLK        &mkp MCLK     &mkp RCLK    &trans           &mmv MOVE_UP     &kp ESCAPE     &kp KP_NUMLOCK  &trans        &trans        &trans        &kp RIGHT_CONTROL
+&kp TAB         &trans  &kp LS(LC(TAB))  &kp UP_ARROW  &kp LC(TAB)  &kp PAGE_UP      &mmv MOVE_DOWN   &kp MINUS      &kp N7          &kp N8        &kp N9        &kp ASTERISK  &kp RIGHT_ALT
+&trans          &trans  &kp LEFT_ARROW   &kp DOWN      &kp RIGHT    &kp PAGE_DOWN    &mmv MOVE_LEFT   &kp PLUS       &kp NUMBER_4    &kp N5        &kp NUMBER_6  &kp SLASH     &kp DELETE
+&kp LEFT_SHIFT  &trans  &trans           &trans        &kp END      &kp HOME         &mmv MOVE_RIGHT  &kp EQUAL      &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp RETURN    &kp RIGHT_SHIFT
+&kp C_MUTE      &trans  &trans           &trans        &trans       &trans           &mkp LCLK        &kp BACKSPACE  &kp LEFT_GUI    &kp N0        &kp DOT       &kp RETURN
             >;
 
             display-name = " ";
