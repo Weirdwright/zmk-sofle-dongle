@@ -41,21 +41,116 @@
         tap-ms = <30>;
     };
 
+    capitalSpace: capitalSpace {
+        compatible = "zmk,behavior-mod-morph";
+        label = "CAPITALSPACE";
+        bindings = <&kp SPACE>, <&kp UNDER>;
+
+        #binding-cells = <0>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
     behaviors {
     };
 
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        ctrlShiftC {
+            bindings = <&kp LS(LC(C))>;
+            key-positions = <29 30>;
+        };
+
+        ctrlShiftV {
+            bindings = <&kp LS(LC(V))>;
+            key-positions = <30 31>;
+        };
+
+        cdSpace {
+            bindings = <&cdSpace>;
+            key-positions = <42 29>;
+        };
+
+        underscore {
+            bindings = <&kp UNDER>;
+            key-positions = <60 59>;
+        };
+
+        capsWord {
+            bindings = <&caps_word>;
+            key-positions = <39 51>;
+        };
+
+        lgui1 {
+            bindings = <&kp LG(NUMBER_1)>;
+            key-positions = <1 14>;
+        };
+
+        lgui2 {
+            bindings = <&kp LG(NUMBER_2)>;
+            key-positions = <2 15>;
+        };
+
+        lgui3 {
+            bindings = <&kp LG(NUMBER_3)>;
+            key-positions = <3 16>;
+        };
+
+        lgui4 {
+            bindings = <&kp LG(NUMBER_4)>;
+            key-positions = <4 17>;
+        };
+
+        lgui5 {
+            bindings = <&kp LG(N5)>;
+            key-positions = <5 18>;
+        };
+
+        lgui6 {
+            bindings = <&kp LG(NUMBER_6)>;
+            key-positions = <7 20>;
+        };
+
+        lgui7 {
+            bindings = <&kp LG(N7)>;
+            key-positions = <8 21>;
+        };
+
+        lgui8 {
+            bindings = <&kp LG(N8)>;
+            key-positions = <9 22>;
+        };
+
+        lgui9 {
+            bindings = <&kp LG(N9)>;
+            key-positions = <10 23>;
+        };
+
+        lgui10 {
+            bindings = <&kp LG(N0)>;
+            key-positions = <11 24>;
+        };
+    };
+
+    macros {
+        cdSpace: cdSpace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp D &kp SPACE>;
+            label = "CDSPACE";
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
 
         layer0 {
             bindings = <
-&kp ESC     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5          &kp UP_ARROW     &kp NUMBER_6   &kp N7  &kp N8     &kp N9     &kp N0      &kp BACKSPACE
-&kp TAB     &kp Q         &kp W         &kp E         &kp R         &kp T           &kp DOWN_ARROW   &kp Y          &kp U   &kp I      &kp O      &kp P       &kp BSLH
-&kp LCTRL   &kp A         &kp S         &kp D         &kp F         &kp G           &kp LEFT_ARROW   &kp H          &kp J   &kp K      &kp L      &kp SEMI    &kp SQT
-&kp LSHFT   &kp Z         &kp X         &kp C         &kp V         &kp B           &kp RIGHT_ARROW  &kp N          &kp M   &kp COMMA  &kp DOT    &kp FSLH    &kp RIGHT_SHIFT
-&kp C_MUTE  &kp CAPSLOCK  &kp LEFT_GUI  &kp RET       &mo 2         &kp LEFT_ALT    &kp ENTER        &kp BACKSPACE  &mo 1   &kp SPACE  &kp UNDER  &kp RETURN
+&kp ESC     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5      &kp UP_ARROW     &kp NUMBER_6   &kp N7         &kp N8     &kp N9    &kp N0      &kp BACKSPACE
+&kp TAB     &kp Q         &kp W         &kp E         &kp R         &kp T       &kp DOWN_ARROW   &kp Y          &kp U          &kp I      &kp O     &kp P       &kp BSLH
+&kp LCTRL   &kp A         &kp S         &kp D         &kp F         &kp G       &kp LEFT_ARROW   &kp H          &kp J          &kp K      &kp L     &kp SEMI    &kp SQT
+&kp LSHFT   &kp Z         &kp X         &kp C         &kp V         &kp B       &kp RIGHT_ARROW  &kp N          &kp M          &kp COMMA  &kp DOT   &kp FSLH    &kp RIGHT_SHIFT
+&kp C_MUTE  &kp CAPSLOCK  &kp LALT      &mo 2         &kp RET       &kp LGUI    &kp ENTER        &kp BACKSPACE  &capitalSpace  &mo 1      &kp LGUI  &kp RETURN
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -78,7 +173,7 @@
             bindings = <
 &kp ESCAPE      &trans  &mkp LCLK        &mkp MCLK     &mkp RCLK    &trans           &mmv MOVE_UP     &kp ESCAPE     &kp KP_NUMLOCK  &trans        &trans        &trans        &kp RIGHT_CONTROL
 &kp TAB         &trans  &kp LS(LC(TAB))  &kp UP_ARROW  &kp LC(TAB)  &kp PAGE_UP      &mmv MOVE_DOWN   &kp MINUS      &kp N7          &kp N8        &kp N9        &kp ASTERISK  &kp RIGHT_ALT
-&trans          &trans  &kp LEFT_ARROW   &kp DOWN      &kp RIGHT    &kp PAGE_DOWN    &mmv MOVE_LEFT   &kp PLUS       &kp NUMBER_4    &kp N5        &kp NUMBER_6  &kp SLASH     &kp DELETE
+&kp LGUI        &trans  &kp LEFT_ARROW   &kp DOWN      &kp RIGHT    &kp PAGE_DOWN    &mmv MOVE_LEFT   &kp PLUS       &kp NUMBER_4    &kp N5        &kp NUMBER_6  &kp SLASH     &kp DELETE
 &kp LEFT_SHIFT  &trans  &trans           &trans        &kp END      &kp HOME         &mmv MOVE_RIGHT  &kp EQUAL      &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp RETURN    &kp RIGHT_SHIFT
 &kp C_MUTE      &trans  &trans           &trans        &trans       &trans           &mkp LCLK        &kp BACKSPACE  &kp LEFT_GUI    &kp N0        &kp DOT       &kp RETURN
             >;
