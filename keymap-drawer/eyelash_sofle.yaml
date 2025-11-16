@@ -27,7 +27,7 @@ layers:
   - {t: '9', s: (}
   - '*'
   - $$mdi:apple-keyboard-option$$
-  - {t: '$$mdi:transfer$$', type: trans}
+  - LGUI
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
@@ -56,12 +56,43 @@ layers:
   - $$mdi:volume-off$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: '$$mdi:apple-keyboard-command$$', type: held}
-  - {t: '0', s: )}
+  - $$mdi:apple-keyboard-command$$
+  - {t: '0', s: ), type: held}
   - {t: ., s: '>'}
   - RETURN
+combos:
+- p: [29, 30]
+  k: Sft+Ctl+C
+- p: [30, 31]
+  k: Sft+Ctl+V
+- p: [42, 29]
+  k: '&cdSpace'
+- p: [60, 59]
+  k: _
+- p: [39, 51]
+  k: $$mdi:alpha-w-box$$
+- p: [1, 14]
+  k: Gui+1
+- p: [2, 15]
+  k: Gui+2
+- p: [3, 16]
+  k: Gui+3
+- p: [4, 17]
+  k: Gui+4
+- p: [5, 18]
+  k: Gui+5
+- p: [7, 20]
+  k: Gui+6
+- p: [8, 21]
+  k: Gui+7
+- p: [9, 22]
+  k: Gui+8
+- p: [10, 23]
+  k: Gui+9
+- p: [11, 24]
+  k: Gui+0
