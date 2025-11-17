@@ -56,19 +56,19 @@ layers:
   - $$mdi:volume-off$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: '$$mdi:apple-keyboard-command$$', type: held}
-  - {t: '0', s: )}
+  - $$mdi:apple-keyboard-command$$
+  - {t: '0', s: ), type: held}
   - {t: ., s: '>'}
   - RETURN
 combos:
-- p: [29, 30]
+- p: [30, 43]
   k: Sft+Ctl+C
-- p: [30, 31]
+- p: [31, 44]
   k: Sft+Ctl+V
 - p: [42, 29]
   k: '&cdSpace'
